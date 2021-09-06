@@ -1,0 +1,14 @@
+//TODO: ==========>>>> CSS RESET
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  min-height: auto;
+}

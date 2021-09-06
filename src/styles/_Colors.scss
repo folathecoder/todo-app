@@ -1,0 +1,38 @@
+//TODO: ==========>>>> COLORS
+:root {
+  //Dark Theme Colors
+
+  --color-dark-100: hsl(235, 24%, 19%);
+  --color-dark-200: hsl(234, 39%, 85%);
+  --color-dark-300: hsl(233, 14%, 35%);
+  --color-dark-bg: hsl(235, 21%, 11%);
+  --color-dark-hover: hsl(0, 0%, 100%);
+
+  //Light Theme Colors
+  --color-light-100: hsl(0, 0%, 100%);
+  --color-light-200: hsl(235, 19%, 35%);
+  --color-light-300: hsla(0, 0%, 59%, 0.356);
+  --color-light-bg: hsl(0, 0%, 95%);
+  --color-light-hover: hsl(0, 0%, 0%);
+
+  //Universal Colors
+  --color-100: hsl(220, 98%, 61%);
+}
+//===== Dark Theme Class
+.dark-theme {
+  --color-100: var(--color-dark-100); //List component
+  --color-200: var(--color-dark-200); //Font Color
+  --color-300: var(--color-dark-300); //Color (Completed, delete, margin)
+  --color-400: var(--color-dark-bg); //Background component
+  --color-500: var(--color-100); // Highlight Color
+  --color-600: var(--color-dark-hover); // Button Hover
+}
+//===== Light Theme Class
+.light-theme {
+  --color-100: var(--color-light-100); //List component
+  --color-200: var(--color-light-200); //Font Color
+  --color-300: var(--color-light-300); //Color (Completed, delete, margin)
+  --color-400: var(--color-light-bg); //Background component
+  --color-500: var(--color-100); // Highlight Color
+  --color-600: var(--color-light-hover); // Button Hover
+}

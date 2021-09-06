@@ -1,0 +1,24 @@
+//TODO: ==========>>>> BASE
+
+// ==>> Font Family
+$main-font: "Josefin Sans", sans-serif;
+
+// ==>> Font Weight
+$weight-100: 400;
+$weight-200: 700;
+
+// ==>> Shadow
+$shadow: rem(0) rem(0) rem(2) rgba(0, 0, 0, 0.158);
+
+body {
+  max-width: 100%;
+  min-height: 100vh;
+  font-family: $main-font;
+  font-weight: $weight-100;
+  color: var(--color-200);
+  background-color: var(--color-400);
+}
+
+p {
+  font-size: rem(16);
+}

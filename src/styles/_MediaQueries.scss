@@ -1,0 +1,12 @@
+//TODO: ==========>>>> MEDIA QUERIES
+@mixin media-query($size) {
+  @if $size == desktop {
+    @media screen and (min-width: 1200px) {
+      @content;
+    }
+  } @else if $size == mobile-mini {
+    @media screen and (min-width: 300px) {
+      @content;
+    }
+  }
+}
