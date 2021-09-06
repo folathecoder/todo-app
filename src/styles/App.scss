@@ -1,0 +1,110 @@
+//TODO: ==========>>>> CONVERT PX TO REM AUTOMATICALLY
+@function rem($size) {
+    $remSize: $size / 16;
+    @return #{$remSize}rem;
+}
+
+//TODO: ==========>>>> MEDIA QUERIES
+@mixin media-query($size) {
+  @if $size == desktop {
+    @media screen and (min-width: 1200px) {
+      @content;
+    }
+  } @else if $size == tablet {
+    @media screen and (min-width: 992px) {
+      @content;
+    }
+  } @else if $size == tablet-mini {
+    @media screen and (min-width: 786px) {
+      @content;
+    }
+  } @else if $size == large-mobile {
+    @media screen and (min-width: 602px) {
+      @content;
+    }
+  } @else if $size == mobile {
+    @media screen and (min-width: 300px) {
+      @content;
+    }
+  } @else if $size == mobile-mini {
+    @media screen and (min-width: 300px) {
+      @content;
+    }
+  }
+}
+
+//TODO: ==========>>>> CSS RESET
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  min-height: auto;
+}
+
+//TODO: ==========>>>> COLORS
+:root {
+  //Dark Theme Colors
+
+  --color-dark-100: hsl(235, 24%, 19%);
+  --color-dark-200: hsl(234, 39%, 85%);
+  --color-dark-300: hsl(233, 14%, 35%);
+  --color-dark-bg: hsl(235, 21%, 11%);
+
+  //Light Theme Colors
+  --color-light-100: hsl(0, 0%, 100%);
+  --color-light-200: hsl(235, 19%, 35%);
+  --color-light-300: hsl(0, 0%, 59%);
+  --color-light-bg: hsl(0, 0%, 95%);
+
+  //Universal Colors
+  --color-100: hsl(220, 98%, 61%);
+}
+//===== Dark Theme Class
+.dark-theme {
+  --color-100: var(--color-dark-100); //List component
+  --color-200: var(--color-dark-200); //Font Color
+  --color-300: var(--color-dark-300); //Color (Completed, delete, margin)
+  --color-400: var(--color-dark-bg); //Background component
+  --color-500: var(--color-100); // Highlight Color
+}
+//===== Light Theme Class
+.light-theme {
+  --color-100: var(--color-light-100); //List component
+  --color-200: var(--color-light-200); //Font Color
+  --color-300: var(--color-light-300); //Color (Completed, delete, margin)
+  --color-400: var(--color-light-bg); //Background component
+  --color-500: var(--color-100); // Highlight Color
+}
+
+//TODO: ==========>>>> BASE
+
+// ==>> Font Family
+$main-font: "Josefin Sans", sans-serif;
+
+// ==>> Font Weight
+$weight-100: 400;
+$weight-200: 700;
+
+body {
+    max-width: 100%;
+    min-height: 100vh;
+    font-family: $main-font;
+    font-weight: $weight-100;
+    color: var(--color-200);
+}
+
+.test {
+  background-color: var(--color-100);
+  color: var(--color-200);
+  font-family: $main-font;
+  font-weight: $weight-200;
+  font-size: rem(16);
+  text-align: center;
+}
