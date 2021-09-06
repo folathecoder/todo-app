@@ -1,4 +1,6 @@
 import React from "react";
+import moon from '../assets/images/icon-moon.svg';
+import sun from "../assets/images/icon-sun.svg";
 
 const Header = () => {
   return (
@@ -8,7 +10,10 @@ const Header = () => {
           <h1>todo</h1>
         </div>
         <div className="header__theme">
-          <button>toggle</button>
+          <button type="button" aria-label="switch theme">
+            <img src={sun} alt="light mode" />
+            {/* <img src={moon} alt="dark mode" /> */}
+          </button>
         </div>
       </header>
     </>
