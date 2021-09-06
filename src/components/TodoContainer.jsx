@@ -19,6 +19,54 @@ const TodoContainer = () => {
           </div>
         </div>
 
+        <div className="todolist__item">
+          <div className="todo__check">
+            <input type="checkbox" name="check" id="check" />
+          </div>
+          <div className="todolist__item-content">
+            <p>Lorem ipsum dolor sit amet</p>
+          </div>
+          <div className="todolist__delete">
+            <img src={deleteIcon} />
+          </div>
+        </div>
+
+        <div className="todolist__item">
+          <div className="todo__check">
+            <input type="checkbox" name="check" id="check" />
+          </div>
+          <div className="todolist__item-content">
+            <p>Lorem ipsum dolor sit amet</p>
+          </div>
+          <div className="todolist__delete">
+            <img src={deleteIcon} />
+          </div>
+        </div>
+
+        <div className="todolist__item">
+          <div className="todo__check">
+            <input type="checkbox" name="check" id="check" />
+          </div>
+          <div className="todolist__item-content">
+            <p>Lorem ipsum dolor sit amet</p>
+          </div>
+          <div className="todolist__delete">
+            <img src={deleteIcon} />
+          </div>
+        </div>
+
+        <div className="todolist__item">
+          <div className="todo__check">
+            <input type="checkbox" name="check" id="check" />
+          </div>
+          <div className="todolist__item-content">
+            <p>Lorem ipsum dolor sit amet</p>
+          </div>
+          <div className="todolist__delete">
+            <img src={deleteIcon} />
+          </div>
+        </div>
+
         {/* Mobile Only */}
         <div className="todolist__menu mobile-only">
           <div className="todolist__menu-counter">
