@@ -40,12 +40,14 @@ img {
   --color-dark-200: hsl(234, 39%, 85%);
   --color-dark-300: hsl(233, 14%, 35%);
   --color-dark-bg: hsl(235, 21%, 11%);
+  --color-dark-hover: hsl(0, 0%, 100%);
 
   //Light Theme Colors
   --color-light-100: hsl(0, 0%, 100%);
   --color-light-200: hsl(235, 19%, 35%);
   --color-light-300: hsla(0, 0%, 59%, 0.356);
   --color-light-bg: hsl(0, 0%, 95%);
+  --color-light-hover: hsl(0, 0%, 0%);
 
   //Universal Colors
   --color-100: hsl(220, 98%, 61%);
@@ -57,6 +59,7 @@ img {
   --color-300: var(--color-dark-300); //Color (Completed, delete, margin)
   --color-400: var(--color-dark-bg); //Background component
   --color-500: var(--color-100); // Highlight Color
+  --color-600: var(--color-dark-hover); // Button Hover
 }
 //===== Light Theme Class
 .light-theme {
@@ -65,6 +68,7 @@ img {
   --color-300: var(--color-light-300); //Color (Completed, delete, margin)
   --color-400: var(--color-light-bg); //Background component
   --color-500: var(--color-100); // Highlight Color
+  --color-600: var(--color-light-hover); // Button Hover
 }
 
 //TODO: ==========>>>> BASE
@@ -130,7 +134,7 @@ p {
       color: white;
 
       @include media-query(desktop) {
-          font-size: rem(40);
+        font-size: rem(40);
       }
     }
   }
@@ -208,7 +212,7 @@ p {
   }
 
   &__main-menu {
-    margin: rem(20) rem(0);
+    margin-top: rem(20);
     border-radius: rem(5);
     justify-content: space-around;
     box-shadow: $shadow;
@@ -226,6 +230,8 @@ p {
   }
 
   &__instruction {
+    margin-top: rem(40);
+
     p {
       text-align: center;
       font-size: rem(14);
@@ -251,6 +257,20 @@ p {
 
   &:hover {
     transition: 0.5s ease-in-out;
-    color: black
+    color: var(--color-600);
+  }
+}
+
+.mobile-only {
+  @include media-query(desktop) {
+    display: none;
+  }
+}
+
+.desktop-only {
+  display: none;
+
+  @include media-query(desktop) {
+    display: flex;
   }
 }
