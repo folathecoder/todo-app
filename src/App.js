@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles/App.scss";
-import check from "./assets/images/icon-check.svg";
+import deleteIcon from "./assets/images/icon-cross.svg";
 
 const App = () => {
   return (
@@ -39,7 +39,10 @@ const App = () => {
                 <input type="checkbox" name="check" id="check" />
               </div>
               <div className="todolist__item-content">
-                <p>Walk mmy dog in the park</p>
+                <p>Lorem ipsum dolor sit amet</p>
+              </div>
+              <div className="todolist__delete">
+                <img src={deleteIcon} />
               </div>
             </div>
 
@@ -48,7 +51,10 @@ const App = () => {
                 <input type="checkbox" name="check" id="check" />
               </div>
               <div className="todolist__item-content">
-                <p>Walk mmy dog in the park</p>
+                <p>Lorem ipsum dolor sit amet</p>
+              </div>
+              <div className="todolist__delete">
+                <img src={deleteIcon} />
               </div>
             </div>
 
@@ -57,16 +63,10 @@ const App = () => {
                 <input type="checkbox" name="check" id="check" />
               </div>
               <div className="todolist__item-content">
-                <p>Walk mmy dog in the park</p>
+                <p>Lorem ipsum dolor sit amet</p>
               </div>
-            </div>
-
-            <div className="todolist__item">
-              <div className="todo__check">
-                <input type="checkbox" name="check" id="check" />
-              </div>
-              <div className="todolist__item-content">
-                <p>Walk mmy dog in the park</p>
+              <div className="todolist__delete">
+                <img src={deleteIcon} />
               </div>
             </div>
 
@@ -78,6 +78,16 @@ const App = () => {
                 <button className="todolist__clear btn">Clear Completed</button>
               </div>
             </div>
+          </div>
+
+          <div className="todolist__menu todolist__main-menu">
+            <button className="btn">All</button>
+            <button className="btn">Active</button>
+            <button className="btn">Completed</button>
+          </div>
+
+          <div className="todolist__instruction">
+            <p>Drag and drop to reorder list</p>
           </div>
         </div>
       </main>

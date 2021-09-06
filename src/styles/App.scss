@@ -10,22 +10,6 @@
     @media screen and (min-width: 1200px) {
       @content;
     }
-  } @else if $size == tablet {
-    @media screen and (min-width: 992px) {
-      @content;
-    }
-  } @else if $size == tablet-mini {
-    @media screen and (min-width: 786px) {
-      @content;
-    }
-  } @else if $size == large-mobile {
-    @media screen and (min-width: 602px) {
-      @content;
-    }
-  } @else if $size == mobile {
-    @media screen and (min-width: 300px) {
-      @content;
-    }
   } @else if $size == mobile-mini {
     @media screen and (min-width: 300px) {
       @content;
@@ -60,7 +44,7 @@ img {
   //Light Theme Colors
   --color-light-100: hsl(0, 0%, 100%);
   --color-light-200: hsl(235, 19%, 35%);
-  --color-light-300: hsl(0, 0%, 59%);
+  --color-light-300: hsla(0, 0%, 59%, 0.356);
   --color-light-bg: hsl(0, 0%, 95%);
 
   //Universal Colors
@@ -92,6 +76,9 @@ $main-font: "Josefin Sans", sans-serif;
 $weight-100: 400;
 $weight-200: 700;
 
+// ==>> Shadow
+$shadow: rem(0) rem(0) rem(2) rgba(0, 0, 0, 0.158);
+
 body {
   max-width: 100%;
   min-height: 100vh;
@@ -101,6 +88,10 @@ body {
   background-color: var(--color-400);
 }
 
+p {
+  font-size: rem(16);
+}
+
 .container {
   height: rem(200);
   max-width: 100%;
@@ -108,6 +99,10 @@ body {
   background-color: white;
   background-image: url(../assets/images/bg-desktop-dark.jpg);
   background-repeat: no-repeat;
+
+  @include media-query(desktop) {
+    height: rem(300);
+  }
 }
 
 .wrapper {
@@ -130,8 +125,13 @@ body {
   &__logo {
     h1 {
       text-transform: uppercase;
-      font-size: rem(20);
+      font-size: rem(25);
       letter-spacing: rem(10);
+      color: white;
+
+      @include media-query(desktop) {
+          font-size: rem(40);
+      }
     }
   }
 
@@ -144,10 +144,12 @@ body {
 .todo {
   max-width: 100%;
   min-height: rem(100);
-  // background-color: pink;
   display: flex;
-  //   flex-direction: column;
   align-items: center;
+
+  @include media-query(desktop) {
+    margin-top: rem(65);
+  }
 
   &__form {
     background-color: var(--color-100);
@@ -155,10 +157,13 @@ body {
     max-width: 100%;
     height: rem(48);
     border-radius: rem(5);
-    box-shadow: rem(0) rem(0) rem(2) rgba(0, 0, 0, 0.377);
+    box-shadow: $shadow;
     display: flex;
-
     align-items: center;
+
+    @include media-query(desktop) {
+      height: rem(64);
+    }
   }
 
   &__check {
@@ -175,27 +180,77 @@ body {
 }
 
 .todolist {
-  background-color: yellow;
   max-width: 100%;
-  min-height: rem(100); //tem
+  min-height: rem(0);
+  border-radius: rem(5);
+  box-shadow: $shadow;
+  background-color: var(--color-100);
 
-  &__item, &__menu {
-    background-color: var(--color-100);
+  &__item,
+  &__menu {
     min-height: rem(48);
     display: flex;
     align-items: center;
+    // justify-content: space-between;
     border-bottom: rem(1) solid var(--color-300);
+
+    @include media-query(desktop) {
+      min-height: rem(64);
+    }
   }
 
   &__menu {
-        border-bottom: none;
-        justify-content: space-between;
-        padding: rem(0) rem(20);
+    border-bottom: none;
+    justify-content: space-between;
+    padding: rem(0) rem(20);
+    border-radius: rem(0) rem(0) rem(5) rem(5);
+    background-color: var(--color-100);
+  }
+
+  &__main-menu {
+    margin: rem(20) rem(0);
+    border-radius: rem(5);
+    justify-content: space-around;
+    box-shadow: $shadow;
+  }
+
+  &__delete {
+    margin: rem(20);
+    text-align: right;
+
+    img {
+      width: rem(12);
+      height: rem(12);
+      cursor: pointer;
+    }
+  }
+
+  &__instruction {
+    p {
+      text-align: center;
+      font-size: rem(14);
+    }
+  }
+}
+
+.todolist__item-content {
+  flex: 2;
+  p {
+    padding: rem(10) rem(0);
   }
 }
 
 .btn {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: rem(14);
+  color: var(--color-200);
+  font-family: $main-font;
+  font-weight: $weight-200;
+
+  &:hover {
+    transition: 0.5s ease-in-out;
+    color: black
+  }
 }
