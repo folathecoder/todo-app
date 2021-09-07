@@ -15,7 +15,7 @@ const TodoContainer = () => {
             <p>Lorem ipsum dolor sit amet</p>
           </div>
           <div className="todolist__delete">
-            <img src={deleteIcon} />
+            <img src={deleteIcon} alt="delete" />
           </div>
         </div>
 
@@ -27,7 +27,7 @@ const TodoContainer = () => {
             <p>Lorem ipsum dolor sit amet</p>
           </div>
           <div className="todolist__delete">
-            <img src={deleteIcon} />
+            <img src={deleteIcon} alt="delete" />
           </div>
         </div>
 
@@ -39,7 +39,7 @@ const TodoContainer = () => {
             <p>Lorem ipsum dolor sit amet</p>
           </div>
           <div className="todolist__delete">
-            <img src={deleteIcon} />
+            <img src={deleteIcon} alt="delete" />
           </div>
         </div>
 
@@ -51,7 +51,7 @@ const TodoContainer = () => {
             <p>Lorem ipsum dolor sit amet</p>
           </div>
           <div className="todolist__delete">
-            <img src={deleteIcon} />
+            <img src={deleteIcon} alt="delete" />
           </div>
         </div>
 
@@ -63,7 +63,7 @@ const TodoContainer = () => {
             <p>Lorem ipsum dolor sit amet</p>
           </div>
           <div className="todolist__delete">
-            <img src={deleteIcon} />
+            <img src={deleteIcon} alt="delete" />
           </div>
         </div>
 

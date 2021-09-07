@@ -1,6 +1,5 @@
 import React from "react";
 import "./styles/App.scss";
-import deleteIcon from "./assets/images/icon-cross.svg";
 import Header from './components/Header';
 import TodoInput from "./components/TodoInput";
 import TodoContainer from "./components/TodoContainer";
