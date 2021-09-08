@@ -23,7 +23,7 @@ const TodoList = ({ id, content, completed, todos, setTodos }) => {
 
   return (
     <>
-      <div className="todolist__item" key={id}>
+      <div className={completed === true ? `todolist__item completed` : `todolist__item active`}  key={id}>
         <div className="todo__check">
           <input
             type="checkbox"

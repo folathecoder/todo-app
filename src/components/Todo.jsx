@@ -40,18 +40,16 @@ const Todo = () => {
 
   ////////////////////////////////////////////////////////////
 
-  // //TODO: Extract todos state from localStorage on first load
-  // useEffect(() => {
-  //   const getLocalTodos = localStorage.getItem("localTodos");
-  //   setTodos(JSON.parse(getLocalTodos));
-  // }, []);
+  //TODO: Extract todos state from localStorage on first load
+  useEffect(() => {
+    const getLocalTodos = localStorage.getItem("localTodos");
+    setTodos(JSON.parse(getLocalTodos));
+  }, []);
 
-  // //TODO: Push todos state to localStorage
-  // useEffect(() => {
-  //   localStorage.setItem("localTodos", JSON.stringify(todos));
-  // });
-
-  console.log(todos)
+  //TODO: Push todos state to localStorage
+  useEffect(() => {
+    localStorage.setItem("localTodos", JSON.stringify(todos));
+  });
 
   ////////////////////////////////////////////////////////////
 
