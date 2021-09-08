@@ -1,24 +1,19 @@
 import React from "react";
-import deleteIcon from "../assets/images/icon-cross.svg";
+import TodoList from "./TodoList";
 
-const TodoContainer = () => {
+const TodoContainer = (props) => {
+  // console.log(props.todos);
+
   return (
     <>
       {/* Todo List Component */}
       <section className="todolist">
         {/* Todo Item Component */}
 
-        <div className="todolist__item">
-          <div className="todo__check">
-            <input type="checkbox" name="check" id="5" />
-            <label htmlFor="5">
-              Lorem ipsum dolor sit amet Lorem Lorem ipsum dolor sit amet Lorem
-            </label>
-          </div>
-          <div className="todolist__delete">
-            <img src={deleteIcon} alt="delete" />
-          </div>
-        </div>
+        {props.todos.map((todo) => {
+          const { id, content, completed } = todo;
+          return <TodoList {...todo}/>;
+        })}
 
         {/* Mobile Only */}
         <div className="todolist__menu mobile-only">

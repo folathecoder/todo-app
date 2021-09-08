@@ -1,8 +1,7 @@
 import React from "react";
 import "./styles/App.scss";
 import Header from './components/Header';
-import TodoInput from "./components/TodoInput";
-import TodoContainer from "./components/TodoContainer";
+import Todo from "./components/Todo";
 import TodoBanner  from "./components/TodoBanner";
 
 const App = () => {
@@ -11,8 +10,7 @@ const App = () => {
       <main className="container">
         <div className="wrapper">
           <Header />
-          <TodoInput />
-          <TodoContainer />
+          <Todo />
           <TodoBanner />
         </div>
       </main>
