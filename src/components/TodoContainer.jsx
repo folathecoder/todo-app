@@ -7,60 +7,13 @@ const TodoContainer = () => {
       {/* Todo List Component */}
       <section className="todolist">
         {/* Todo Item Component */}
-        <div className="todolist__item">
-          <div className="todo__check">
-            <input type="checkbox" name="check" id="check" />
-          </div>
-          <div className="todolist__item-content">
-            <p>Lorem ipsum dolor sit amet</p>
-          </div>
-          <div className="todolist__delete">
-            <img src={deleteIcon} alt="delete" />
-          </div>
-        </div>
 
         <div className="todolist__item">
           <div className="todo__check">
-            <input type="checkbox" name="check" id="check" />
-          </div>
-          <div className="todolist__item-content">
-            <p>Lorem ipsum dolor sit amet</p>
-          </div>
-          <div className="todolist__delete">
-            <img src={deleteIcon} alt="delete" />
-          </div>
-        </div>
-
-        <div className="todolist__item">
-          <div className="todo__check">
-            <input type="checkbox" name="check" id="check" />
-          </div>
-          <div className="todolist__item-content">
-            <p>Lorem ipsum dolor sit amet</p>
-          </div>
-          <div className="todolist__delete">
-            <img src={deleteIcon} alt="delete" />
-          </div>
-        </div>
-
-        <div className="todolist__item">
-          <div className="todo__check">
-            <input type="checkbox" name="check" id="check" />
-          </div>
-          <div className="todolist__item-content">
-            <p>Lorem ipsum dolor sit amet</p>
-          </div>
-          <div className="todolist__delete">
-            <img src={deleteIcon} alt="delete" />
-          </div>
-        </div>
-
-        <div className="todolist__item">
-          <div className="todo__check">
-            <input type="checkbox" name="check" id="check" />
-          </div>
-          <div className="todolist__item-content">
-            <p>Lorem ipsum dolor sit amet</p>
+            <input type="checkbox" name="check" id="5" />
+            <label htmlFor="5">
+              Lorem ipsum dolor sit amet Lorem Lorem ipsum dolor sit amet Lorem
+            </label>
           </div>
           <div className="todolist__delete">
             <img src={deleteIcon} alt="delete" />

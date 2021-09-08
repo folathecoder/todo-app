@@ -6,7 +6,7 @@ const TodoInput = () => {
         <section className="todo">
           <form className="todo__form">
             <div className="todo__check">
-              <input type="checkbox" disabled={true} />
+              <input type="checkbox" disabled={true} className="todo__input"/>
             </div>
             <div className="todo__input">
               <input
