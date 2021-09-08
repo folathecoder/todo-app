@@ -2,7 +2,9 @@ import React from "react";
 import TodoList from "./TodoList";
 
 const TodoContainer = (props) => {
-  // console.log(props.todos);
+  const { todos, setTodos } = props;
+  const todoCount = todos.length;
+  const itemText = todoCount < 2 ? `item` : `items`;
 
   return (
     <>
@@ -10,15 +12,17 @@ const TodoContainer = (props) => {
       <section className="todolist">
         {/* Todo Item Component */}
 
-        {props.todos.map((todo) => {
+        {todos.map((todo) => {
           const { id, content, completed } = todo;
-          return <TodoList {...todo}/>;
+          return <TodoList {...todo} todos={todos} setTodos={setTodos}/>;
         })}
 
         {/* Mobile Only */}
         <div className="todolist__menu mobile-only">
           <div className="todolist__menu-counter">
-            <p>5 items left</p>
+            <p>
+              {todoCount} {itemText} left
+            </p>
           </div>
           <div>
             <button className="todolist__clear btn">Clear Completed</button>
@@ -27,7 +31,9 @@ const TodoContainer = (props) => {
         {/* Desktop Only */}
         <div className="todolist__menu desktop-only">
           <div className="todolist__menu-counter">
-            <p>5 items left</p>
+            <p>
+              {todoCount} {itemText} left
+            </p>
           </div>
           <button className="btn">All</button>
           <button className="btn">Active</button>
