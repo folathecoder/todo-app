@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import TodoContainer from "./TodoContainer";
 import { data } from "../data/data";
 
-
 const Todo = () => {
   ////////////////////////////////////////////////////////////
   //TODO: State Management
@@ -35,6 +34,8 @@ const Todo = () => {
     if (todo.content) {
       // Add the new todo object into the todos array (while preserving the previous data)
       setTodos([...todos, todo]);
+      // Clear form input
+      document.querySelector(".todo__form").reset();
     }
   };
 
@@ -65,8 +66,7 @@ const Todo = () => {
               type="text"
               name="content"
               id="text"
-              className="todo__input todo__control"
-              max="5"
+              className="todo__input"
               placeholder="Create a new todo.."
               onChange={handleChange}
             />

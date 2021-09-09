@@ -91,12 +91,23 @@
   }
 
   &__input {
+    appearance: none;
+    -webkit-appearance: none;
     height: 100%;
     width: 100%;
     border: none;
-    border-radius: rem(5);
+    border-radius: rem(0) rem(5) rem(5) rem(0);
     background-color: var(--color-100);
-    color: white;
+    color: var(--color-200);
+
+    &:hover {
+      border-color: red;
+      outline: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
   }
 }
 
@@ -228,3 +239,8 @@ input[type="checkbox"]:checked + label {
     display: flex;
   }
 }
+
+    input:focus, textarea:focus, select:focus{
+      -webkit-appearance: none;
+        outline: none;
+    }

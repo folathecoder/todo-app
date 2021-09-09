@@ -39,10 +39,9 @@ const TodoList = ({ id, content, completed, todos, setTodos }) => {
             onChange={() => {
               handleCompleted(id);
             }}
+            checked={completed === true ? true : false}
           />
-          <label htmlFor={id}>
-            {content}
-          </label>
+          <label htmlFor={id}>{content}</label>
         </div>
         <div className="todolist__delete">
           <img
