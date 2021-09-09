@@ -77,7 +77,7 @@
   }
 
   &__check {
-    flex: 10;
+    flex: 11;
     margin: rem(0) rem(20);
     display: flex;
     align-items: center;
@@ -97,10 +97,6 @@
     border-radius: rem(5);
     background-color: var(--color-100);
     color: white;
-
-    input:focus {
-      outline: none !important;
-    }
   }
 }
 
@@ -139,7 +135,7 @@
   }
 
   &__delete {
-    margin: rem(20);
+    margin-right: rem(20);
     text-align: right;
 
     img {
@@ -158,15 +154,7 @@
     }
   }
 }
-// .todolist__item-content {
-//   flex: 2;
 
-//   label {
-//     font-size: rem(14);
-//     padding: rem(10) rem(0);
-//     cursor: pointer;
-//   }
-// }
 .btn {
   border: none;
   background-color: transparent;
@@ -182,6 +170,10 @@
   }
 }
 
+.active-btn {
+  color: var(--color-500);
+}
+
 input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
@@ -194,7 +186,6 @@ input[type="checkbox"] {
   display: flex;
   align-items: center;
   justify-content: center;
-
 
   &:checked {
     transition: 0.5s ease-in-out;

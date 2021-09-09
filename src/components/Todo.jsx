@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import TodoContainer from "./TodoContainer";
 import { data } from "../data/data";
 
@@ -65,14 +65,15 @@ const Todo = () => {
               type="text"
               name="content"
               id="text"
-              className="todo__input"
+              className="todo__input todo__control"
+              max="5"
               placeholder="Create a new todo.."
               onChange={handleChange}
             />
           </div>
         </form>
       </section>
-      <TodoContainer todos={todos} setTodos={setTodos}/>
+      <TodoContainer todos={todos} setTodos={setTodos} />
     </>
   );
 };

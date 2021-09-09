@@ -41,13 +41,37 @@ const TodoContainer = (props) => {
   };
 
   //TODO: Handle: Display only completed todos
-  const handleDisplayCompleted = () => {
+  const handleDisplayCompleted = (e) => {
     filterTodos("completed");
   };
 
+  //TODO: Add && Update notification
   useEffect(() => {
-    const notification = todoCount > 1 ? `Todos` : `Todo`;
-    document.title = `${notification} (${todoCount})`;
+    if (todoCount > 0) {
+      const notification = todoCount > 1 ? `Todos` : `Todo`;
+      document.title = `${notification} (${todoCount})`;
+    }
+  });
+
+  //TODO: Add active class to clicked button
+  useEffect(() => {
+    const buttons = document.querySelectorAll(".btn");
+    const wrapper = document.querySelector(".wrapper");
+
+    wrapper.addEventListener("click", function (e) {
+      // Capture the element
+      if (e.target.closest(".btn")) {
+        const clicked = e.target.closest(".btn");
+
+        // Remove active class on buttons
+        buttons.forEach((btn) => {
+          btn.classList.remove("active-btn");
+        });
+
+        // Add active class to clicked button
+        clicked.classList.add("active-btn");
+      }
+    });
   });
 
   return (
@@ -57,7 +81,6 @@ const TodoContainer = (props) => {
         {/* Todo Item Component */}
 
         {todos.map((todo) => {
-          const { id, content, completed } = todo;
           return <TodoList {...todo} todos={todos} setTodos={setTodos} />;
         })}
 
@@ -104,7 +127,10 @@ const TodoContainer = (props) => {
         <button className="btn" onClick={handleDisplayActive}>
           Active
         </button>
-        <button className="btn" onClick={handleDisplayCompleted}>
+        <button
+          className="btn"
+          onClick={handleDisplayCompleted}
+        >
           Completed
         </button>
       </div>

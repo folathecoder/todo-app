@@ -16,7 +16,7 @@
   --color-light-hover: hsl(0, 0%, 0%);
 
   //Universal Colors
-  --color-100: hsl(220, 98%, 61%);
+  --color-100-highlight: hsl(220, 98%, 61%);
 }
 //===== Dark Theme Class
 .dark-theme {
@@ -24,7 +24,7 @@
   --color-200: var(--color-dark-200); //Font Color
   --color-300: var(--color-dark-300); //Color (Completed, delete, margin)
   --color-400: var(--color-dark-bg); //Background component
-  --color-500: var(--color-100); // Highlight Color
+  --color-500: var(--color-100-highlight); // Highlight Color
   --color-600: var(--color-dark-hover); // Button Hover
 }
 //===== Light Theme Class
@@ -33,6 +33,6 @@
   --color-200: var(--color-light-200); //Font Color
   --color-300: var(--color-light-300); //Color (Completed, delete, margin)
   --color-400: var(--color-light-bg); //Background component
-  --color-500: var(--color-100); // Highlight Color
+  --color-500: var(--color-100-highlight); // Highlight Color
   --color-600: var(--color-light-hover); // Button Hover
 }

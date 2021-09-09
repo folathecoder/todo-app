@@ -23,7 +23,14 @@ const TodoList = ({ id, content, completed, todos, setTodos }) => {
 
   return (
     <>
-      <div className={completed === true ? `todolist__item completed` : `todolist__item active`}  key={id}>
+      <div
+        className={
+          completed === true
+            ? `todolist__item completed`
+            : `todolist__item active`
+        }
+        key={id}
+      >
         <div className="todo__check">
           <input
             type="checkbox"
@@ -33,7 +40,9 @@ const TodoList = ({ id, content, completed, todos, setTodos }) => {
               handleCompleted(id);
             }}
           />
-          <label htmlFor={id}>{content}</label>
+          <label htmlFor={id}>
+            {content}
+          </label>
         </div>
         <div className="todolist__delete">
           <img

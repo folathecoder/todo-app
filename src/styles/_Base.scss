@@ -21,8 +21,4 @@ body {
 
 p {
   font-size: rem(14);
-
-  @include media-query (desktop) {
-    font-size: rem(16);
-  }
 }
