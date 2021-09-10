@@ -90,25 +90,30 @@
     }
   }
 
-  &__input {
-    appearance: none;
-    -webkit-appearance: none;
-    height: 100%;
+  &__input-container {
+    height: 98%;
     width: 100%;
     border: none;
     border-radius: rem(0) rem(5) rem(5) rem(0);
     background-color: var(--color-100);
     color: var(--color-200);
+    position: relative;
+
+    &:focus, &:hover {
+      outline: none;
+    }
 
     &:hover {
-      border-color: red;
-      outline: none;
-    }
-
-    &:focus {
-      outline: none;
+        outline: rem(0.1) solid transparent;
     }
   }
+}
+
+// .todo-input {
+//   margin-left: rem(10);
+// }
+.todo-input:focus, .todo__input:hover {
+  outline: rem(0.1) solid transparent;
 }
 
 .todolist {

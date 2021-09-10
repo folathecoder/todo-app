@@ -61,14 +61,15 @@ const Todo = () => {
           <div className="todo__check">
             <input type="checkbox" disabled={true} className="todo__input" />
           </div>
-          <div className="todo__input">
+          <div className="todo__input-container">
             <input
               type="text"
               name="content"
               id="text"
-              className="todo__input"
+              className="todo__input-container todo-input"
               placeholder="Create a new todo.."
               onChange={handleChange}
+              aria-label="input a new todo"
             />
           </div>
         </form>
