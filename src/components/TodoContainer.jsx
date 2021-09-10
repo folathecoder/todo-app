@@ -159,7 +159,12 @@ const TodoContainer = (props) => {
           <button className="btn" onClick={handleDisplayCompleted}>
             Completed
           </button>
-          <button className="todolist__clear btn">Clear Completed</button>
+          <button
+            className="todolist__clear btn"
+            onClick={handleClearCompleted}
+          >
+            Clear Completed
+          </button>
         </div>
       </section>
 
