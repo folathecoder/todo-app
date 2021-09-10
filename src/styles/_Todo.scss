@@ -4,6 +4,7 @@
   padding: rem(20);
   background-image: url(../assets/images/bg-desktop-dark.jpg);
   background-repeat: no-repeat;
+  background-size: cover;
 
   @include media-query(desktop) {
     height: rem(300);
