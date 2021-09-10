@@ -3,6 +3,7 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import TodoList from "./TodoList";
 
 const TodoContainer = (props) => {
+
   //TODO: Drill state values, calculate todos array length and make item text dynamic
   const { todos, setTodos } = props;
   const todoCount = todos.length;
@@ -95,7 +96,7 @@ const TodoContainer = (props) => {
           <Droppable droppableId="123375765">
             {(provided, snapshot) => (
               <div {...provided.droppableProps} ref={provided.innerRef}>
-                {todos.map((todo, index) => {
+                {todos.map((todo, index, arr) => {
                   return (
                     <Draggable
                       draggableId={todo.id}

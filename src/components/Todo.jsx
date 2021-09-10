@@ -5,7 +5,7 @@ import { data } from "../data/data";
 const Todo = () => {
   ////////////////////////////////////////////////////////////
   //TODO: State Management
-  const [todo, setTodo] = useState();
+  const [todo, setTodo] = useState({});
   const [todos, setTodos] = useState(data);
 
   ////////////////////////////////////////////////////////////
@@ -40,18 +40,16 @@ const Todo = () => {
   };
 
   ////////////////////////////////////////////////////////////
-
-  //TODO: Extract todos state from localStorage on first load
-  useEffect(() => {
-    const getLocalTodos = localStorage.getItem("localTodos");
-    setTodos(JSON.parse(getLocalTodos));
-  }, []);
-
   //TODO: Push todos state to localStorage
   useEffect(() => {
     localStorage.setItem("localTodos", JSON.stringify(todos));
   });
 
+  // //TODO: Extract todos state from localStorage on first load
+  useEffect(() => {
+    const getLocalTodos = localStorage.getItem("localTodos");
+    setTodos(JSON.parse(getLocalTodos));
+  }, []);
   ////////////////////////////////////////////////////////////
 
   return (
