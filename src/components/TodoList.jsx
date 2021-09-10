@@ -22,7 +22,6 @@ const TodoList = ({ id, content, completed, todos, setTodos }) => {
   };
 
   return (
-    <>
       <div
         className={
           completed === true
@@ -30,6 +29,7 @@ const TodoList = ({ id, content, completed, todos, setTodos }) => {
             : `todolist__item active`
         }
         key={id}
+        draggable="true"
       >
         <div className="todo__check">
           <input
@@ -53,7 +53,6 @@ const TodoList = ({ id, content, completed, todos, setTodos }) => {
           />
         </div>
       </div>
-    </>
   );
 };
 

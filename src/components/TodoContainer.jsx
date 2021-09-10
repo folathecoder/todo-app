@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import TodoList from "./TodoList";
 
 const TodoContainer = (props) => {
+  //TODO: Drill state values, calculate todos array length and make item text dynamic
   const { todos, setTodos } = props;
   const todoCount = todos.length;
   const itemText = todoCount < 2 ? `item` : `items`;
@@ -74,15 +76,55 @@ const TodoContainer = (props) => {
     });
   });
 
+  //TODO: Function that maintains the draggable state (React DND Library)
+  const onEnd = (result) => {
+    if (!result.destination) return;
+    const items = Array.from(todos);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+    setTodos(items);
+  };
+
   return (
     <>
       {/* Todo List Component */}
       <section className="todolist">
         {/* Todo Item Component */}
 
-        {todos.map((todo) => {
-          return <TodoList {...todo} todos={todos} setTodos={setTodos} />;
-        })}
+        <DragDropContext onDragEnd={onEnd}>
+          <Droppable droppableId="123375765">
+            {(provided, snapshot) => (
+              <div {...provided.droppableProps} ref={provided.innerRef}>
+                {todos.map((todo, index) => {
+                  return (
+                    <Draggable
+                      draggableId={todo.id}
+                      key={todo.id}
+                      index={index}
+                    >
+                      {(provided, snapshot) => (
+                        <div
+                          ref={provided.innerRef}
+                          {...provided.draggableProps}
+                          {...provided.dragHandleProps}
+                        >
+                          <div>
+                            <TodoList
+                              {...todo}
+                              todos={todos}
+                              setTodos={setTodos}
+                            />
+                          </div>
+                        </div>
+                      )}
+                    </Draggable>
+                  );
+                })}
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+        </DragDropContext>
 
         {/* Mobile Only */}
         <div className="todolist__menu mobile-only">
@@ -127,10 +169,7 @@ const TodoContainer = (props) => {
         <button className="btn" onClick={handleDisplayActive}>
           Active
         </button>
-        <button
-          className="btn"
-          onClick={handleDisplayCompleted}
-        >
+        <button className="btn" onClick={handleDisplayCompleted}>
           Completed
         </button>
       </div>
